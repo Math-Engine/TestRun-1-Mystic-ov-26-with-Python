@@ -1,0 +1,26 @@
+name: TestRun-1-Mystic-ov-26-with-Python
+
+on:
+  schedule:
+  - cron: '*/5 * * * *'
+  workflow_dispatch:
+    inputs:
+      n:
+        description: '실행 횟수'
+        required: true
+        default: '10'
+        type: string
+
+run-name: TestRun-1-Mystic-ov-26-with-Python [${{ github.event.inputs.n || '10' }}]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Run Python script
+      run: python script.py ${{ github.event.inputs.n || '10' }}
