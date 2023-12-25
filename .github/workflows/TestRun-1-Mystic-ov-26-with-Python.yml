@@ -13,6 +13,9 @@ on:
 
 run-name: TestRun-1-Mystic-ov-26-with-Python [${{ github.event.inputs.n || '10' }}]
 
+concurrency:
+  group: my-workflow-group
+
 jobs:
   build:
     runs-on: ubuntu-latest
