@@ -7,7 +7,7 @@ on:
     inputs:
       n:
         description: '실행 횟수'
-        required: true
+        required: false
         default: '10'
         type: string
 
