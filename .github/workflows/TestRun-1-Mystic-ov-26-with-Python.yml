@@ -2,7 +2,7 @@ name: TestRun-1-Mystic-ov-26-with-Python
 
 on:
   schedule:
-  - cron: '*/20 * * * *'
+  - cron: '*/30 * * * *'
   workflow_dispatch:
     inputs:
       n:
