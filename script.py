@@ -31,8 +31,16 @@ number_of_changes_to_result = 0
 for a in range(int(max_json['a']), int(max_json['a']) + param):
     for b in range(int(max_json['b']), int(max_json['b']) + param):
         for c in range(int(max_json['c']), int(max_json['c']) + param):
+            if (c == int(max_json['c'])):
+                a_to_c_power = a**c
+            else:
+                a_to_c_power = a_to_c_power * a
             for d in range(int(max_json['d']), int(max_json['d']) + param):
-                if a**c - b**d == 2 and c > 1 and d > 1:
+                if (d == int(max_json['d'])):
+                    b_to_d_power = b**d
+                else:
+                    b_to_d_power = b_to_d_power * b
+                if a_to_c_power - b_to_d_power == 2 and c > 1 and d > 1:
                     print(str(a) + "^" + str(c) + " - " + str(b) + "^" + str(d))
                     number_of_changes_to_result = number_of_changes_to_result + 1
                     temp_result = {}
